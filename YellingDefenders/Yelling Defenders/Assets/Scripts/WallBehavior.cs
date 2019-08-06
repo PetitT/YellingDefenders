@@ -6,7 +6,9 @@ using UnityEngine.Events;
 public class WallBehavior : MonoBehaviour
 {
 
-    private int _health;
+    public int _health;
+
+    public OnLifeChangeEvent onLifeChangeEvent;
 
     public int Health
     {
@@ -16,16 +18,29 @@ public class WallBehavior : MonoBehaviour
         }
         set
         {
-            HealthCheck();
             _health = value;
+            HealthCheck();
+            onLifeChangeEvent.Invoke(_health);
         }
     }
 
 
+    private void Awake()
+    {
+        _health = FindObjectOfType<DataContainer>().caca.data.wallHealth;
+    }
+
     public UnityEvent Lose;
+    [System.Serializable]
+    public class OnLifeChangeEvent : UnityEvent <int>
+    {
+
+    }
 
     private void HealthCheck()
     {
+        Debug.Log(Health);
+
         if (Health <= 0)
             Lose.Invoke();
     }

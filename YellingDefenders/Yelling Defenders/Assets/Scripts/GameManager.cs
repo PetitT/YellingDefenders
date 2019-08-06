@@ -6,20 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField]
-    private Image deathPannel;
+    [SerializeField] private GameObject deathPannel;
 
     private void Start()
     {
 
-        deathPannel.enabled = false;
+        deathPannel.SetActive(false);
 
     }
 
-    void FadeImage()
+    public void FadeImage()
     {
 
-        deathPannel.enabled = true;
+        deathPannel.SetActive(true);
         Time.timeScale = 0;
 
     }
@@ -27,6 +26,7 @@ public class GameManager : MonoBehaviour
     public void RestartButton()
     {
 
+        Time.timeScale = 1;
         SceneManager.LoadScene(0);
 
     }

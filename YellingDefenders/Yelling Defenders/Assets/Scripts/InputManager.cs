@@ -7,9 +7,22 @@ public class InputManager : MonoBehaviour
     [SerializeField] private List<GameObject> traps = new List<GameObject>();
     private List<bool> canUse = new List<bool>();
     private List<KeyCode> inputs = new List<KeyCode>();
-    private int trapDuration;
-    private int trapCoolDown;
-    string truc;
+    private float trapDuration;
+    private float trapCoolDown;
+    private bool coolDown = true;
+
+
+    private void Awake()
+    {
+        inputs = FindObjectOfType<DataContainer>().caca.keycodes;
+        trapDuration = FindObjectOfType<DataContainer>().caca.data.trapDuration;
+        trapCoolDown = FindObjectOfType<DataContainer>().caca.data.trapCooldown;
+
+        for (int i = 0; i < traps.Count; i++)
+        {
+            canUse.Add(coolDown);
+        }
+    }
 
     private void Update()
     {
@@ -32,7 +45,7 @@ public class InputManager : MonoBehaviour
     private void CheckAndActivate(int inputIndex)
     {
         if (canUse[inputIndex])
-            StartCoroutine("ActivateTtrap", inputIndex);
+            StartCoroutine("ActivateTrap", inputIndex);
     }
 
 
