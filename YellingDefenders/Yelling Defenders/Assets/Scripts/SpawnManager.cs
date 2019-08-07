@@ -17,6 +17,7 @@ public class SpawnManager : MonoBehaviour
 
     private float spawnRateBuff;
     private float ennemySpeedBuff;
+    private float currentennemySpeedBuff;
 
     private float buffTimer;
 
@@ -52,14 +53,11 @@ public class SpawnManager : MonoBehaviour
     {
 
         yield return new WaitForSeconds(buffTimer);
-        for (int i = 0; i < ennemySpeed.Count; i++)
-        {
-            ennemySpeed[i] += ennemySpeedBuff;
-        }
+
+        currentennemySpeedBuff += ennemySpeedBuff;
         spawnRate -= spawnRateBuff;
         DifficultyChange.Invoke();
         StartCoroutine("TimePass");
-        Debug.Log(buffTimer);
 
     }
 
@@ -77,7 +75,7 @@ public class SpawnManager : MonoBehaviour
             {
                 previousPosition = randomSpawnIndex;
                 GameObject newEnnemy = Instantiate(ennemys[randomEnnemyIndex], spawns[randomSpawnIndex].position, transform.rotation);
-                newEnnemy.GetComponent<EnnemyBehaviour>().Speed = ennemySpeed[randomEnnemyIndex];
+                newEnnemy.GetComponent<EnnemyBehaviour>().Speed = ennemySpeed[randomEnnemyIndex] + ennemySpeedBuff;
                 newEnnemy.GetComponent<EnnemyBehaviour>().Damage = enemyDamage[randomEnnemyIndex];
                 newEnnemy.GetComponent<EnnemyBehaviour>().Score = enemyScore[randomEnnemyIndex];
                 newEnnemy.GetComponent<EnnemyBehaviour>().EnemyType = randomEnnemyIndex;

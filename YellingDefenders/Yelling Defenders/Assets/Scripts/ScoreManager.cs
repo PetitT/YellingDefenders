@@ -25,7 +25,6 @@ public class ScoreManager : MonoBehaviour
     {
 
         score += scoreToAdd;
-        Debug.Log(score);
         onScoreChangeEvent.Invoke(score);
 
     }

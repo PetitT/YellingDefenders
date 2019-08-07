@@ -6,6 +6,8 @@ TagManager:
   tags:
   - wall
   - trap
+  - perfectTrap
+  - perfectTrapCheck
   layers:
   - Default
   - TransparentFX

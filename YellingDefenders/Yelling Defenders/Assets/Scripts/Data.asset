@@ -18,9 +18,9 @@ MonoBehaviour:
     trapDuration: 0.5
     trapCooldown: 1
     enemySpeed:
-    - 15
-    - 10
-    enemyAcceleration: 1.5
+    - 12
+    - 5
+    enemyAcceleration: 1
     spawnRate: 3
     spawnOffset: 2
     enemySpeedBuff: 5

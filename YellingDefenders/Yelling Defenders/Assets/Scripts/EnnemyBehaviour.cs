@@ -12,6 +12,9 @@ public class EnnemyBehaviour : MonoBehaviour
     private int enemyType;
     private float acceleration;
 
+    private bool perfectTrapCheck;
+    public bool hasBeenHitThisFrame;
+
     public int EnemyType
     {
         get { return enemyType; }
@@ -58,22 +61,43 @@ public class EnnemyBehaviour : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
 
-
-        switch (other.gameObject.tag)
+        if (other.gameObject.tag == "wall")
         {
-
-            case "wall":
-                other.GetComponent<WallBehavior>().Health -= damage;
-                Destroy(gameObject);
-                break;
-
-            case "trap":
-                FindObjectOfType<ScoreManager>().ScoreChange(score);
-                Destroy(gameObject);
-                break;
-
+            other.GetComponent<WallBehavior>().Health -= damage;
+            Destroy(gameObject);
         }
 
+        else if (other.gameObject.tag == "perfectTrap" && perfectTrapCheck)
+        {
+            Debug.Log("PerfectTrap");
+            FindObjectOfType<ScoreManager>().ScoreChange(score * 2);
+            Destroy(gameObject);
+            hasBeenHitThisFrame = true;
+        }
+        else if (other.gameObject.tag == "trap" && !perfectTrapCheck)
+        {
+            Debug.Log("Trap");
+            FindObjectOfType<ScoreManager>().ScoreChange(score);
+            Destroy(gameObject);
+            hasBeenHitThisFrame = true;
+        }
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "perfectTrapCheck")
+        {
+            perfectTrapCheck = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "perfectTrapCheck")
+        {
+            perfectTrapCheck = false;
+        }
     }
 
 

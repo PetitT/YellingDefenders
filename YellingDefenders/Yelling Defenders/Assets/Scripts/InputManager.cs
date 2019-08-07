@@ -5,6 +5,7 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     [SerializeField] private List<GameObject> traps = new List<GameObject>();
+    [SerializeField] private List<GameObject> perfectTraps = new List<GameObject>();
     private List<bool> canUse = new List<bool>();
     private List<KeyCode> inputs = new List<KeyCode>();
     private float trapDuration;
@@ -53,8 +54,10 @@ public class InputManager : MonoBehaviour
     {
         StartCoroutine("CoolDown", trapIndex);
         traps[trapIndex].GetComponent<BoxCollider>().isTrigger = true;
+        perfectTraps[trapIndex].GetComponent<BoxCollider>().isTrigger = true;
         yield return new WaitForSeconds(trapDuration);
         traps[trapIndex].GetComponent<BoxCollider>().isTrigger = false;
+        perfectTraps[trapIndex].GetComponent<BoxCollider>().isTrigger = false;
     }
 
     private IEnumerator CoolDown(int trapIndex)
