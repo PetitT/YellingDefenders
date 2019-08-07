@@ -10,6 +10,8 @@ public class Data : ScriptableObject
     {
         public float trapDuration;
         public float trapCooldown;
+        public float trapSpeed;
+        public float trapTarget;
 
         public List<float> enemySpeed = new List<float>();
         public float enemyAcceleration;

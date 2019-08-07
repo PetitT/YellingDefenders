@@ -15,8 +15,10 @@ MonoBehaviour:
     scorePerSecond: 1
     scoreBoost: 1
   data:
-    trapDuration: 0.5
-    trapCooldown: 1
+    trapDuration: 0.2
+    trapCooldown: 0.75
+    trapSpeed: 25
+    trapTarget: 3.25
     enemySpeed:
     - 12
     - 5
