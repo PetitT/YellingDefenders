@@ -42,10 +42,10 @@ public class WallBehavior : MonoBehaviour
 
     private void HealthCheck()
     {
-        if (Health >= maxHealth)
-            Health = maxHealth;
+        if (_health >= maxHealth)
+            _health = maxHealth;
 
-        if (Health <= 0)
+        if (_health <= 0)
             Lose.Invoke();
     }
 }

@@ -71,7 +71,6 @@ public class EnnemyBehaviour : MonoBehaviour
 
         else if (other.gameObject.tag == "perfectTrap" && perfectTrapCheck)
         {
-            Debug.Log("PerfectTrap");
             FindObjectOfType<ScoreManager>().ScoreChange(score * 2);
             Instantiate(blueParticles, gameObject.transform.position, blueParticles.transform.rotation);
             Destroy(gameObject);
@@ -79,7 +78,6 @@ public class EnnemyBehaviour : MonoBehaviour
         }
         else if (other.gameObject.tag == "trap" && !perfectTrapCheck)
         {
-            Debug.Log("Trap");
             FindObjectOfType<ScoreManager>().ScoreChange(score);
             Instantiate(yellowParticles, gameObject.transform.position, yellowParticles.transform.rotation);
             Destroy(gameObject);
