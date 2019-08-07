@@ -18,6 +18,7 @@ public class SpawnManager : MonoBehaviour
     private float spawnRateBuff;
     private float ennemySpeedBuff;
     private float currentennemySpeedBuff;
+    private int heal;
 
     private float buffTimer;
 
@@ -33,6 +34,7 @@ public class SpawnManager : MonoBehaviour
         spawnRateBuff = FindObjectOfType<DataContainer>().caca.data.spawnRateBuff;
         ennemySpeedBuff = FindObjectOfType<DataContainer>().caca.data.enemySpeedBuff;
         buffTimer = FindObjectOfType<DataContainer>().caca.data.buffTimer;
+        heal = FindObjectOfType<DataContainer>().caca.data.buffHeal;
     }
 
     private void Start()
@@ -54,8 +56,11 @@ public class SpawnManager : MonoBehaviour
 
         yield return new WaitForSeconds(buffTimer);
 
+
+
         currentennemySpeedBuff += ennemySpeedBuff;
         spawnRate -= spawnRateBuff;
+        FindObjectOfType<WallBehavior>().Health += heal; 
         DifficultyChange.Invoke();
         StartCoroutine("TimePass");
 

@@ -16,18 +16,19 @@ MonoBehaviour:
     scoreBoost: 1
   data:
     trapDuration: 0.2
-    trapCooldown: 0.75
+    trapCooldown: 0.35
     trapSpeed: 25
     trapTarget: 3.25
     enemySpeed:
     - 12
-    - 5
-    enemyAcceleration: 1
+    - 1
+    enemyAcceleration: 0.5
     spawnRate: 3
     spawnOffset: 2
     enemySpeedBuff: 5
     spawnRateBuff: 0.5
     buffTimer: 30
+    buffHeal: 25
     wallHealth: 100
   keycodes: 610000007a000000650000007200000020000000
   ennemyDamage: 0a00000008000000

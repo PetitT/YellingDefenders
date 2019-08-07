@@ -11,9 +11,11 @@ public class EnnemyBehaviour : MonoBehaviour
     private int score;
     private int enemyType;
     private float acceleration;
+    private bool hasBeenHitThisFrame;
 
     private bool perfectTrapCheck;
-    public bool hasBeenHitThisFrame;
+    [SerializeField] private GameObject yellowParticles;
+    [SerializeField] private GameObject blueParticles;
 
     public int EnemyType
     {
@@ -71,6 +73,7 @@ public class EnnemyBehaviour : MonoBehaviour
         {
             Debug.Log("PerfectTrap");
             FindObjectOfType<ScoreManager>().ScoreChange(score * 2);
+            Instantiate(blueParticles, gameObject.transform.position, blueParticles.transform.rotation);
             Destroy(gameObject);
             hasBeenHitThisFrame = true;
         }
@@ -78,6 +81,7 @@ public class EnnemyBehaviour : MonoBehaviour
         {
             Debug.Log("Trap");
             FindObjectOfType<ScoreManager>().ScoreChange(score);
+            Instantiate(yellowParticles, gameObject.transform.position, yellowParticles.transform.rotation);
             Destroy(gameObject);
             hasBeenHitThisFrame = true;
         }

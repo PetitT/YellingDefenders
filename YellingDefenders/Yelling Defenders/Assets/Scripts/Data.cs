@@ -22,6 +22,7 @@ public class Data : ScriptableObject
         public float spawnRateBuff;
 
         public float buffTimer;
+        public int buffHeal;
 
         public int wallHealth;
     }

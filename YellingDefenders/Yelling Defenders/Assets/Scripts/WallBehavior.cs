@@ -7,6 +7,7 @@ public class WallBehavior : MonoBehaviour
 {
 
     public int _health;
+    public int maxHealth;
 
     public OnLifeChangeEvent onLifeChangeEvent;
 
@@ -28,6 +29,7 @@ public class WallBehavior : MonoBehaviour
     private void Awake()
     {
         _health = FindObjectOfType<DataContainer>().caca.data.wallHealth;
+        maxHealth = Health;
     }
 
     public UnityEvent Lose;
@@ -40,6 +42,8 @@ public class WallBehavior : MonoBehaviour
 
     private void HealthCheck()
     {
+        if (Health >= maxHealth)
+            Health = maxHealth;
 
         if (Health <= 0)
             Lose.Invoke();
