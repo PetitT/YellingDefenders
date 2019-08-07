@@ -9,8 +9,9 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private List<Transform> spawns = new List<Transform>();
     [SerializeField] private List<GameObject> ennemys = new List<GameObject>();
     private List<int> enemyDamage = new List<int>();
+    private List<int> enemyScore = new List<int>();
 
-    private float ennemySpeed;
+    private List<float> ennemySpeed = new List<float>();
     private float spawnRate;
     private float spawnOffset;
 
@@ -24,6 +25,7 @@ public class SpawnManager : MonoBehaviour
     private void Awake()
     {
         enemyDamage = FindObjectOfType<DataContainer>().caca.ennemyDamage;
+        enemyScore = FindObjectOfType<DataContainer>().caca.enemyScore;
         ennemySpeed = FindObjectOfType<DataContainer>().caca.data.enemySpeed;
         spawnRate = FindObjectOfType<DataContainer>().caca.data.spawnRate;
         spawnOffset = FindObjectOfType<DataContainer>().caca.data.spawnOffset;
@@ -50,10 +52,14 @@ public class SpawnManager : MonoBehaviour
     {
 
         yield return new WaitForSeconds(buffTimer);
-        ennemySpeed += ennemySpeedBuff;
+        for (int i = 0; i < ennemySpeed.Count; i++)
+        {
+            ennemySpeed[i] += ennemySpeedBuff;
+        }
         spawnRate -= spawnRateBuff;
         DifficultyChange.Invoke();
         StartCoroutine("TimePass");
+        Debug.Log(buffTimer);
 
     }
 
@@ -71,8 +77,10 @@ public class SpawnManager : MonoBehaviour
             {
                 previousPosition = randomSpawnIndex;
                 GameObject newEnnemy = Instantiate(ennemys[randomEnnemyIndex], spawns[randomSpawnIndex].position, transform.rotation);
-                newEnnemy.GetComponent<EnnemyBehaviour>().Speed = ennemySpeed;
+                newEnnemy.GetComponent<EnnemyBehaviour>().Speed = ennemySpeed[randomEnnemyIndex];
                 newEnnemy.GetComponent<EnnemyBehaviour>().Damage = enemyDamage[randomEnnemyIndex];
+                newEnnemy.GetComponent<EnnemyBehaviour>().Score = enemyScore[randomEnnemyIndex];
+                newEnnemy.GetComponent<EnnemyBehaviour>().EnemyType = randomEnnemyIndex;
             }
             else
                 i--;

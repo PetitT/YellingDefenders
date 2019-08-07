@@ -11,10 +11,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaa45e2257a4ad149921c3df74079bf7, type: 3}
   m_Name: Data
   m_EditorClassIdentifier: 
+  score:
+    scorePerSecond: 1
+    scoreBoost: 1
   data:
     trapDuration: 0.5
     trapCooldown: 1
-    enemySpeed: 15
+    enemySpeed:
+    - 15
+    - 10
+    enemyAcceleration: 1.5
     spawnRate: 3
     spawnOffset: 2
     enemySpeedBuff: 5
@@ -22,4 +28,5 @@ MonoBehaviour:
     buffTimer: 30
     wallHealth: 100
   keycodes: 610000007a000000650000007200000020000000
-  ennemyDamage: 0a000000
+  ennemyDamage: 0a00000008000000
+  enemyScore: 0a0000000f000000

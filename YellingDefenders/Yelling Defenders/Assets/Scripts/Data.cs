@@ -11,7 +11,8 @@ public class Data : ScriptableObject
         public float trapDuration;
         public float trapCooldown;
 
-        public float enemySpeed;
+        public List<float> enemySpeed = new List<float>();
+        public float enemyAcceleration;
         public float spawnRate;
         public float spawnOffset;
 
@@ -23,8 +24,18 @@ public class Data : ScriptableObject
         public int wallHealth;
     }
 
+    [System.Serializable]
+    public class Score
+    {
+        public int scorePerSecond;
+        public int scoreBoost;
+    }
+
+
+    public Score score;
     public Datas data;
     public List<KeyCode> keycodes = new List<KeyCode>();
     public List<int> ennemyDamage = new List<int>();
+    public List<int> enemyScore = new List<int>();
 
 }

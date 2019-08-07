@@ -31,6 +31,7 @@ public class WallBehavior : MonoBehaviour
     }
 
     public UnityEvent Lose;
+
     [System.Serializable]
     public class OnLifeChangeEvent : UnityEvent <int>
     {
@@ -39,7 +40,6 @@ public class WallBehavior : MonoBehaviour
 
     private void HealthCheck()
     {
-        Debug.Log(Health);
 
         if (Health <= 0)
             Lose.Invoke();
