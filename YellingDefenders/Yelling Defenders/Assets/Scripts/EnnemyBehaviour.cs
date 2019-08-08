@@ -12,6 +12,8 @@ public class EnnemyBehaviour : MonoBehaviour
     private int enemyType;
     private float acceleration;
     private bool hasBeenHitThisFrame;
+    private List<AudioClip> trapSounds = new List<AudioClip>();
+    private AudioClip wallSound;
 
     private bool perfectTrapCheck;
     [SerializeField] private GameObject yellowParticles;
@@ -47,6 +49,8 @@ public class EnnemyBehaviour : MonoBehaviour
     private void Awake()
     {
         acceleration = FindObjectOfType<DataContainer>().caca.data.enemyAcceleration;
+        trapSounds = FindObjectOfType<DataContainer>().caca.sounds.trapSounds;
+        wallSound = FindObjectOfType<DataContainer>().caca.sounds.wallSound;
     }
 
     private void Update()
@@ -66,11 +70,15 @@ public class EnnemyBehaviour : MonoBehaviour
         if (other.gameObject.tag == "wall")
         {
             other.GetComponent<WallBehavior>().Health -= damage;
+            AudioScript.PlaySound(wallSound);
             Destroy(gameObject);
         }
 
         else if (other.gameObject.tag == "perfectTrap" && perfectTrapCheck)
         {
+            int trapIndex = other.GetComponent<TrapIndex>().TrappuIndex;
+            Debug.Log(trapIndex);
+            PlayTrapSound(trapIndex);
             FindObjectOfType<ScoreManager>().ScoreChange(score * 2);
             Instantiate(blueParticles, gameObject.transform.position, blueParticles.transform.rotation);
             Destroy(gameObject);
@@ -78,6 +86,9 @@ public class EnnemyBehaviour : MonoBehaviour
         }
         else if (other.gameObject.tag == "trap" && !perfectTrapCheck)
         {
+            int trapIndex = other.GetComponent<TrapIndex>().TrappuIndex;
+            Debug.Log(trapIndex);
+            PlayTrapSound(trapIndex);
             FindObjectOfType<ScoreManager>().ScoreChange(score);
             Instantiate(yellowParticles, gameObject.transform.position, yellowParticles.transform.rotation);
             Destroy(gameObject);
@@ -102,5 +113,9 @@ public class EnnemyBehaviour : MonoBehaviour
         }
     }
 
+    private void PlayTrapSound(int trapIndex)
+    {
+        AudioScript.PlaySound(trapSounds[trapIndex]);
+    }
 
 }

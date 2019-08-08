@@ -20,9 +20,11 @@ public class InputManager : MonoBehaviour
     private List<bool> fall = new List<bool>();
     private bool isFalling = false;
 
+    private AudioClip attackSound;
 
     private void Awake()
     {
+        attackSound = FindObjectOfType<DataContainer>().caca.sounds.attackSound;
         inputs = FindObjectOfType<DataContainer>().caca.keycodes;
         trapDuration = FindObjectOfType<DataContainer>().caca.data.trapDuration;
         trapCoolDown = FindObjectOfType<DataContainer>().caca.data.trapCooldown;
@@ -101,6 +103,7 @@ public class InputManager : MonoBehaviour
     private IEnumerator ActivateTrap(int trapIndex)
     {
         StartCoroutine("CoolDown", trapIndex);
+        AudioScript.PlaySound(attackSound);
         traps[trapIndex].GetComponent<BoxCollider>().isTrigger = true;
         active[trapIndex] = true;
         perfectTraps[trapIndex].GetComponent<BoxCollider>().isTrigger = true;

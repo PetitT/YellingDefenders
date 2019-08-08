@@ -34,7 +34,18 @@ public class Data : ScriptableObject
         public int scoreBoost;
     }
 
+    [System.Serializable]
+    public class Sounds
+    {
+        public AudioClip attackSound;
+        public List<AudioClip> trapSounds = new List<AudioClip>();
+        public AudioClip startGame;
+        public AudioClip gameOver;
+        public AudioClip wallSound;
+        public AudioClip levelUp;
+    }
 
+    public Sounds sounds;
     public Score score;
     public Datas data;
     public List<KeyCode> keycodes = new List<KeyCode>();

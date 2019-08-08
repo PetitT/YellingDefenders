@@ -24,6 +24,8 @@ public class SpawnManager : MonoBehaviour
 
     public UnityEvent DifficultyChange;
 
+    private AudioClip levelUp;
+
     private void Awake()
     {
         enemyDamage = FindObjectOfType<DataContainer>().caca.ennemyDamage;
@@ -35,6 +37,7 @@ public class SpawnManager : MonoBehaviour
         ennemySpeedBuff = FindObjectOfType<DataContainer>().caca.data.enemySpeedBuff;
         buffTimer = FindObjectOfType<DataContainer>().caca.data.buffTimer;
         heal = FindObjectOfType<DataContainer>().caca.data.buffHeal;
+        levelUp = FindObjectOfType<DataContainer>().caca.sounds.levelUp;
     }
 
     private void Start()
@@ -57,7 +60,7 @@ public class SpawnManager : MonoBehaviour
         yield return new WaitForSeconds(buffTimer);
 
 
-
+        AudioScript.PlaySound(levelUp);
         currentennemySpeedBuff += ennemySpeedBuff;
         spawnRate -= spawnRateBuff;
         FindObjectOfType<WallBehavior>().Health += heal; 

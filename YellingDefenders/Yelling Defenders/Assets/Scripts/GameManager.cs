@@ -7,11 +7,13 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject deathPannel;
+    private AudioClip deathClip;
 
     private void Start()
     {
 
         deathPannel.SetActive(false);
+        deathClip = FindObjectOfType<DataContainer>().caca.sounds.gameOver;
 
     }
 
@@ -19,6 +21,7 @@ public class GameManager : MonoBehaviour
     {
 
         deathPannel.SetActive(true);
+        AudioScript.PlaySound(deathClip);
         Time.timeScale = 0;
 
     }

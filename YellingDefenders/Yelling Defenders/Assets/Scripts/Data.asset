@@ -11,6 +11,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaa45e2257a4ad149921c3df74079bf7, type: 3}
   m_Name: Data
   m_EditorClassIdentifier: 
+  sounds:
+    attackSound: {fileID: 8300000, guid: 4d45a339603683a46b4cd715639582a8, type: 3}
+    trapSounds:
+    - {fileID: 8300000, guid: 95f6a105919c2c64a9b9e33d5ac48677, type: 3}
+    - {fileID: 8300000, guid: a61dbbf25532baa4e85f0ee9ce848fc4, type: 3}
+    - {fileID: 8300000, guid: 5f3df53666073a6469c9d9e701673211, type: 3}
+    - {fileID: 8300000, guid: a4f7a0113afa808499bba3efc0d14ec0, type: 3}
+    - {fileID: 8300000, guid: 56c3a322dec08534fb77e8f24afc215b, type: 3}
+    startGame: {fileID: 8300000, guid: 73262a956af51d74ba94b2c2ef404aab, type: 3}
+    gameOver: {fileID: 8300000, guid: ec67f186248aab145a62e5a72a4e3fd0, type: 3}
+    wallSound: {fileID: 8300000, guid: 31a24f9e3b351ad43846197dc627e6bb, type: 3}
+    levelUp: {fileID: 8300000, guid: 6ef14aef087f4364bb78fe516b948284, type: 3}
   score:
     scorePerSecond: 1
     scoreBoost: 1
