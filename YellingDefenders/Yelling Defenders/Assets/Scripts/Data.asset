@@ -22,7 +22,10 @@ MonoBehaviour:
     enemySpeed:
     - 12
     - 1
-    enemyAcceleration: 0.5
+    - 0.5
+    - 15
+    - 15
+    enemyAcceleration: 0.3
     spawnRate: 3
     spawnOffset: 2
     enemySpeedBuff: 5
@@ -31,5 +34,5 @@ MonoBehaviour:
     buffHeal: 25
     wallHealth: 100
   keycodes: 610000007a000000650000007200000020000000
-  ennemyDamage: 0a00000008000000
-  enemyScore: 0a0000000f000000
+  ennemyDamage: 0a000000080000000a0000000f0000000f000000
+  enemyScore: 0a0000000f000000140000000f0000000f000000

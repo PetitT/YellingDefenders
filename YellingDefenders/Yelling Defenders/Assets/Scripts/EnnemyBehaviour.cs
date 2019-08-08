@@ -52,9 +52,9 @@ public class EnnemyBehaviour : MonoBehaviour
     private void Update()
     {
 
-        transform.Translate(Vector3.right * Speed * Time.deltaTime);
+        transform.Translate(Vector3.forward * Speed * Time.deltaTime);
 
-        if (enemyType == 1)
+        if (enemyType == 1 || enemyType == 2)
             speed += acceleration;
 
 

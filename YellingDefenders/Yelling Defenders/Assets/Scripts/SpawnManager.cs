@@ -79,7 +79,7 @@ public class SpawnManager : MonoBehaviour
             if (randomSpawnIndex != previousPosition)
             {
                 previousPosition = randomSpawnIndex;
-                GameObject newEnnemy = Instantiate(ennemys[randomEnnemyIndex], spawns[randomSpawnIndex].position, transform.rotation);
+                GameObject newEnnemy = Instantiate(ennemys[randomEnnemyIndex], spawns[randomSpawnIndex].position, ennemys[randomEnnemyIndex].transform.rotation);
                 newEnnemy.GetComponent<EnnemyBehaviour>().Speed = ennemySpeed[randomEnnemyIndex] + ennemySpeedBuff;
                 newEnnemy.GetComponent<EnnemyBehaviour>().Damage = enemyDamage[randomEnnemyIndex];
                 newEnnemy.GetComponent<EnnemyBehaviour>().Score = enemyScore[randomEnnemyIndex];

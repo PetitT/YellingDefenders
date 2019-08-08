@@ -1,0 +1,192 @@
+fileFormatVersion: 2
+guid: afae6e49dd9c6dd40b23c31dc3b8b822
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Axe
+    100004: Axe_end
+    100006: Body
+    100008: Body.003
+    100010: Body.003_end
+    100012: Camera
+    100014: Cil_D
+    100016: Cil_D_end
+    100018: Cil_G
+    100020: Cil_G_end
+    100022: EN_Axe_Handle
+    100024: EN_Axe_Sharp
+    100026: EN_Body
+    100028: EN_Helmet
+    100030: EN_Horn
+    100032: EN_Horn.001
+    100034: EN_Shield
+    100036: Helmet
+    100038: Helmet_end
+    100040: Light
+    100042: Shield
+    100044: Shield_end
+    100046: //RootNode
+    400000: Armature
+    400002: Axe
+    400004: Axe_end
+    400006: Body
+    400008: Body.003
+    400010: Body.003_end
+    400012: Camera
+    400014: Cil_D
+    400016: Cil_D_end
+    400018: Cil_G
+    400020: Cil_G_end
+    400022: EN_Axe_Handle
+    400024: EN_Axe_Sharp
+    400026: EN_Body
+    400028: EN_Helmet
+    400030: EN_Horn
+    400032: EN_Horn.001
+    400034: EN_Shield
+    400036: Helmet
+    400038: Helmet_end
+    400040: Light
+    400042: Shield
+    400044: Shield_end
+    400046: //RootNode
+    2000000: Camera
+    4300000: EN_Body
+    4300002: EN_Axe_Handle
+    4300004: EN_Axe_Sharp
+    4300006: EN_Helmet
+    4300008: EN_Horn
+    4300010: EN_Horn.001
+    4300012: EN_Shield
+    7400000: Armature|ArmatureAction
+    9500000: //RootNode
+    10800000: Light
+    13700000: EN_Axe_Handle
+    13700002: EN_Axe_Sharp
+    13700004: EN_Body
+    13700006: EN_Helmet
+    13700008: EN_Horn
+    13700010: EN_Horn.001
+    13700012: EN_Shield
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EN_Props_UV
+    second: {fileID: 2100000, guid: 21b0be56c96e2b34ea7337f0a94e69c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EN_Props_UV.001
+    second: {fileID: 2100000, guid: 2b4235934ac2081418ed4e127926b5da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skin
+    second: {fileID: 2100000, guid: e1d4a96be125101499bc87a524a82be0, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Armature|ArmatureAction
+      takeName: Armature|ArmatureAction
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

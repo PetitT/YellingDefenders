@@ -28,13 +28,13 @@ public class CheatCode : MonoBehaviour
                     for (int i = 0; i < tentacles.Count; i++)
                     {
                         tentacles[i].SetActive(true);
+                        hasCheated = true;
                     }
                     for (int i = 0; i < traps.Count; i++)
                     {
                         traps[i].SetActive(false);
                     }
                     cheatIndex = 0;
-                    hasCheated = true;
                 }
             }
             else
